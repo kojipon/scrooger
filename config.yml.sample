@@ -1,0 +1,19 @@
+calendar:
+  service: 'google_apis_calendar_v3'
+  application_name: 'ec2scheduler@0123456789-aws-linkage.iam.gserviceaccount.com'
+  credentials_path: 'client_secret.json'
+  start_mins_ago: 5
+  stop_mins_later: 5
+
+machine:
+  service: 'aws_ec2'
+  region: 'ap-northeast-1'
+
+target:
+  - label: 'Development'
+    calendar_id: 'c_0123456789abcdefghijklmn@resource.calendar.google.com'
+      - 'i-0123456789'
+  - label: 'Staging'
+    calendar_id: 'c_123456789abcdefghijklmno@resource.calendar.google.com'
+      - 'i-1234567890'
+      - 'i-2345678901'
