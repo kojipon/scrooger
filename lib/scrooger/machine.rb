@@ -14,13 +14,11 @@ module Scrooger
     end
 
     def start
-      p 'DEBUG: startting a machine.'
-      # @instance.start
+      instance.start
     end
 
     def stop
-      p 'DEBUG: stopping a machine.'
-      # @instance.stop
+      instance.stop
     end
 
     def started?
