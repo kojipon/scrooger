@@ -3,7 +3,11 @@
 require 'yaml'
 
 file = File.join(__dir__, '..', '..', 'config.yml')
-yaml = YAML.load_file(file)
+yaml = begin
+  YAML.load_file(file)
+rescue StandardError
+  {}
+end
 
 def deep_freeze(hash)
   hash.freeze.each_value do |i|

@@ -25,7 +25,7 @@ module Scrooger
     end
 
     def all
-      @target.each do |t|
+      @target&.each do |t|
         next if t['calendar_id'].nil? || t['instance_ids'].nil?
 
         cal = Scrooger::Calendar.new(t['calendar_id'])
